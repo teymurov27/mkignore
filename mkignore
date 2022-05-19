@@ -1,0 +1,7 @@
+#!/bin/bash
+
+function gi() { curl -sLw "\n" https://www.toptal.com/developers/gitignore/api/$@ ;}
+
+for arg in "$*"; 
+    do gi "$arg" | tee ./.gitignore;
+done
